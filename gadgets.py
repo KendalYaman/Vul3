@@ -74,7 +74,7 @@ if __name__ == '__main__':
             print "Found ", len(r), " executable sections:"
             i = 0
             for s in r:
-                print "   ", i, ": ", s['name'], "0x", hex(s['addr']), s['hexStream']
+                #print "   ", i, ": ", s['name'], "0x", hex(s['addr']), s['hexStream']
                 i += 1
                 
                 hexdata = s['hexStream']
