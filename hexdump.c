@@ -3,7 +3,8 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define MAX_BUFFER_SIZE 1000 7
+#define MAX_BUFFER_SIZE 1000 
+
 int function2(char* filename) {
 	FILE* f = NULL;
 	char buffer[MAX_BUFFER_SIZE];
