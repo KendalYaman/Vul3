@@ -30,7 +30,7 @@ int function2(char* filename) {
 for (i = 0; i < MAX_BUFFER_SIZE; i++) {
 		printf("%02X ", buffer[i]);
 		if ((i+1) % 8 == 0) printf(" ");
-		if ((i+1) % 16 == 0 )printf"\n");
+		if ((i+1) % 16 == 0 )printf("\n");
 	}
 	 printf("\n");
 
