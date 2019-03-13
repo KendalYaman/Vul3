@@ -72,6 +72,7 @@ if __name__ == '__main__':
 
             branInst = ["jmp", "je", "jz","jne","jnz","jg","jnle","jge","jnl","jl","jnge","jle","jng", "ja","jnbe","jnae","jxcz","jc","jnc"
                         , "jo","jno","jp","jpe","jnp","jpo","js","jns", "call", "callq", "ret", "retq"]
+
             md = Cs(CS_ARCH_X86, CS_MODE_64)
             for filename in sys.argv[3:]: #for filename in sys.argv[2:]:
                 r = getHexStreamsFromElfExecutableSections(filename)
@@ -82,7 +83,7 @@ if __name__ == '__main__':
                     i += 1
 
                     hexdata = s['hexStream']
-                    gadget = hexdata[0 : 30]
+                    gadget = hexdata[0 : 2] #gadget = hexdata[0 : 30]
                     gadget = convertXCS(gadget)
                     offset = 0
                     for (address, size, mnemonic, op_str) in md.disasm_lite(gadget, offset):
