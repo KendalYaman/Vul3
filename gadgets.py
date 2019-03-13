@@ -87,8 +87,11 @@ if __name__ == '__main__':
 
                     for i, _ in enumerate(hexdata):
                         if str(hexdata[i:i + 2]) in retHex:
-                            print str(hexdata[i:i + 2])
+                            #print str(hexdata[i+2:])
 
+                            #print str(hexdata[i:i + 2])
+                            for (address, size, mnemonic, op_str) in md.disasm_lite(gadget, offset):
+                                print ("gadget: %s %s \n") % (mnemonic, op_str)
 
                     """ gadget = hexdata[0 : int(sys.argv[3]) * 2] #gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
                     gadget = convertXCS(gadget)
