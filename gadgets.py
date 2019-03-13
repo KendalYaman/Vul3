@@ -70,12 +70,10 @@ if __name__ == '__main__':
 
         if sys.argv[3] == '-length':
 
-            print "Okay "
-
             branInst = ["jmp", "je", "jz","jne","jnz","jg","jnle","jge","jnl","jl","jnge","jle","jng", "ja","jnbe","jnae","jxcz","jc","jnc"
                         , "jo","jno","jp","jpe","jnp","jpo","js","jns", "call", "callq", "ret", "retq"]
             md = Cs(CS_ARCH_X86, CS_MODE_64)
-            for filename in sys.argv[2:]:
+            for filename in sys.argv[2]: #for filename in sys.argv[2:]:
                 r = getHexStreamsFromElfExecutableSections(filename)
                 print "Found ", len(r), " executable sections:"
                 i = 0
