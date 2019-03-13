@@ -73,7 +73,7 @@ if __name__ == '__main__':
             branInst = ["jmp", "je", "jz","jne","jnz","jg","jnle","jge","jnl","jl","jnge","jle","jng", "ja","jnbe","jnae","jxcz","jc","jnc"
                         , "jo","jno","jp","jpe","jnp","jpo","js","jns", "call", "callq", "ret", "retq"]
 
-            retHex = ['c3', 'cb', 'c2', 'ca']
+            retHex = ['c3', 'cb']
             count = 0
             md = Cs(CS_ARCH_X86, CS_MODE_64)
             for filename in sys.argv[4:]: #for filename in sys.argv[2:]:
@@ -109,7 +109,8 @@ if __name__ == '__main__':
                             for fn in strList:
                                 if fn[1] in branInst:
                                     print ("flag %s" % fn[1])
-                                    flag = 0
+                                    #flag = 0
+
                             if flag == 1:
                                 print ("gadget:\n")
                                 for fn in strList:
