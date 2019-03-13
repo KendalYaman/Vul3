@@ -74,7 +74,7 @@ if __name__ == '__main__':
                         , "jo","jno","jp","jpe","jnp","jpo","js","jns", "call", "callq", "ret", "retq"]
 
             md = Cs(CS_ARCH_X86, CS_MODE_64)
-            for filename in sys.argv[3:]: #for filename in sys.argv[2:]:
+            for filename in sys.argv[4:]: #for filename in sys.argv[2:]:
                 r = getHexStreamsFromElfExecutableSections(filename)
                 print "Found ", len(r), " executable sections:"
                 i = 0
@@ -83,11 +83,11 @@ if __name__ == '__main__':
                     i += 1
 
                     hexdata = s['hexStream']
-                    gadget = hexdata[0 : 200] #gadget = hexdata[0 : 30]
+                    gadget = hexdata[0 : arg[3] * 2] #gadget = hexdata[0 : 30]
                     gadget = convertXCS(gadget)
                     offset = 0
                     for (address, size, mnemonic, op_str) in md.disasm_lite(gadget, offset):
-                        if mnemonic is "ret": #if mnemonic not in branInst:
+                        if mnemonic not in branInst:
                             print ("gadget: %s %s \n") %(mnemonic, op_str)
 
 
