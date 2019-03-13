@@ -89,7 +89,7 @@ if __name__ == '__main__':
                     #offset = 0
 
                     for i, _ in enumerate(hexdata):
-                        print ("\n")
+
                         if str(hexdata[i:i + 2]) in retHex:
 
                             #print str(hexdata[i+2:])
@@ -97,6 +97,7 @@ if __name__ == '__main__':
                             gadget = convertXCS(gadget)
                             offset = 0
                             #print str(hexdata[i:i + 2])
+                            print ("\n")
                             for (address, size, mnemonic, op_str) in md.disasm_lite(gadget, offset):
                                 print ("gadget: %s %s ") % (mnemonic, op_str)
 
