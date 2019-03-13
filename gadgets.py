@@ -87,7 +87,7 @@ if __name__ == '__main__':
                     gadget = convertXCS(gadget)
                     offset = 0
                     for (address, size, mnemonic, op_str) in md.disasm_lite(gadget, offset):
-                        if mnemonic not in dictionnaire:
+                        if mnemonic not in branInst:
                             print ("gadget: %s %s \n") %(mnemonic, op_str)
 
 
