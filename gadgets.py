@@ -103,7 +103,7 @@ if __name__ == '__main__':
                             #print str(hexdata[i:i + 2])
                             print ("\n")
 
-                            gadget2 = hexdata[i+ 2 - (int(
+                            gadget2 = hexdata[i - 3 - (int(
                                 sys.argv[3]) * 2): i-1]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
                             gadget2 = convertXCS(gadget2)
 
