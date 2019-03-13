@@ -104,7 +104,7 @@ if __name__ == '__main__':
                             print ("\n")
 
                             gadget2 = hexdata[i - (int(
-                                sys.argv[3]) * 2): i]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
+                                sys.argv[3]) * 2): i-1]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
                             gadget2 = convertXCS(gadget2)
 
                             disassCode = md.disasm_lite(gadget2, offset)
