@@ -89,8 +89,9 @@ if __name__ == '__main__':
                     #offset = 0
 
                     for i, _ in enumerate(hexdata):
+                        print ("\n")
                         if str(hexdata[i:i + 2]) in retHex:
-                            print ("\n")
+
                             #print str(hexdata[i+2:])
                             gadget = hexdata[i+2:i+2+(int(sys.argv[3]) * 2)]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
                             gadget = convertXCS(gadget)
