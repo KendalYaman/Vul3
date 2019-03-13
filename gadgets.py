@@ -92,12 +92,11 @@ if __name__ == '__main__':
                         if str(hexdata[i:i + 2]) in retHex:
                             print ("\n")
                             #print str(hexdata[i+2:])
-                            gadget = hexdata[i+2:i+2+(int(sys.argv[3]) * 2)]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
+                            gadget = hexdata[i:i+(int(sys.argv[3]) * 2)]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
                             gadget = convertXCS(gadget)
                             offset = 0
                             #print str(hexdata[i:i + 2])
                             for (address, size, mnemonic, op_str) in md.disasm_lite(gadget, offset):
-
                                 print ("gadget: %s %s ") % (mnemonic, op_str)
 
 
