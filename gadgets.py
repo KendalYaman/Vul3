@@ -103,7 +103,11 @@ if __name__ == '__main__':
                             #print str(hexdata[i:i + 2])
                             print ("\n")
 
-                            disassCode = md.disasm_lite(gadget, offset)
+                            gadget2 = hexdata[i - (int(
+                                sys.argv[3]) * 2): i]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
+                            gadget2 = convertXCS(gadget2)
+
+                            disassCode = md.disasm_lite(gadget2, offset)
                             strList = []
                             for (address, size, mnemonic, op_str) in disassCode:
                                 strList.append([address, mnemonic, op_str])
@@ -113,9 +117,14 @@ if __name__ == '__main__':
                                     flag = 0
 
                             if flag == 1:
+
+                                gadget = hexdata[i - (int(sys.argv[
+                                                              3]) * 2): i + 2]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
+                                gadget = convertXCS(gadget)
+
                                 print ("gadget:\n")
-                                for fn in strList:
-                                    print (" %s %s ") % (fn[1], fn[2])
+                                for (address, size, mnemonic, op_str) in md.disasm_lite(gadget, offset):
+                                    print ("%s %s \n") % (mnemonic, op_str)
 
                     print ("Count %s" % count)
 
