@@ -111,7 +111,7 @@ if __name__ == '__main__':
                                     flag = 0
                             if flag == 1:
                                 print ("gadget:\n")
-                                for strFN in fn:
+                                for strFN in strList:
                                     print (" %s %s ") % (strFN[1], strFN[2])
 
                     print ("Count %s" % count)
