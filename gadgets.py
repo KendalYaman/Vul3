@@ -102,7 +102,7 @@ if __name__ == '__main__':
                             print ("gadget:\n")
                             for (address, size, mnemonic, op_str) in md.disasm_lite(gadget, offset):
                                 if mnemonic in branInst:
-                                    flag = 0
+                                    break
                             if flag == 1:
                                 for (address, size, mnemonic, op_str) in md.disasm_lite(gadget, offset):
                                     print (" %s %s ") % (mnemonic, op_str)
