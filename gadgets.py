@@ -101,11 +101,13 @@ if __name__ == '__main__':
                             offset = 0
                             #print str(hexdata[i:i + 2])
                             print ("\n")
-                            print ("gadget:\n")
+
                             for (address, size, mnemonic, op_str) in md.disasm_lite(gadget, offset):
                                 if str(mnemonic) in branInst:
                                     flag = 0
                             if flag == 1:
+                                print ("gadget:\n")
+
                                 for (address, size, mnemonic, op_str) in md.disasm_lite(gadget, offset):
                                     print (" %s %s ") % (mnemonic, op_str)
 
