@@ -79,6 +79,7 @@ if __name__ == '__main__':
                 r = getHexStreamsFromElfExecutableSections(filename)
                 print "Found ", len(r), " executable sections:"
                 i = 0
+                count = 0
                 for s in r:
                     print "   ", i, ": ", s['name'], "0x", hex(s['addr'])#, s['hexStream']
                     i += 1
@@ -91,7 +92,7 @@ if __name__ == '__main__':
                     for i, _ in enumerate(hexdata):
 
                         if str(hexdata[i:i + 2]) in retHex:
-
+                            count+= 1
                             #print str(hexdata[i+2:])
                             flag = 1
                             gadget = hexdata[i -2- (int(sys.argv[3]) * 2) : i + 2]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
@@ -107,6 +108,7 @@ if __name__ == '__main__':
                                 for (address, size, mnemonic, op_str) in md.disasm_lite(gadget, offset):
                                     print (" %s %s ") % (mnemonic, op_str)
 
+                    print ("Count "+ count)
                     """ gadget = hexdata[0 : int(sys.argv[3]) * 2] #gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
                     gadget = convertXCS(gadget)
                     offset = 0
