@@ -38,4 +38,4 @@ print ("shellcode: "+ shellcode)
 with open("shellcode.dat", "wb") as f:
     f.write(shellcode)
 print (binascii.hexlify(shellcode))
-print ("g1: %x" % (g1))
+#print ("g1: %x" % (g1))
