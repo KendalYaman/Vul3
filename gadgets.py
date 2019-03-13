@@ -112,7 +112,7 @@ if __name__ == '__main__':
                             if flag == 1:
                                 print ("gadget:\n")
                                 for strFN in fn:
-                                    print (" %s %s ") % (strFN[mnemonic], strFN[op_str])
+                                    print (" %s %s ") % (strFN[1], strFN[2])
 
                     print ("Count %s" % count)
 
