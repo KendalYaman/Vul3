@@ -73,6 +73,7 @@ if __name__ == '__main__':
             branInst = ["jmp", "je", "jz","jne","jnz","jg","jnle","jge","jnl","jl","jnge","jle","jng", "ja","jnbe","jnae","jxcz","jc","jnc"
                         , "jo","jno","jp","jpe","jnp","jpo","js","jns", "call", "callq", "ret", "retq"]
 
+            retHex = ['c3', 'cb', 'c2', 'ca']
             md = Cs(CS_ARCH_X86, CS_MODE_64)
             for filename in sys.argv[4:]: #for filename in sys.argv[2:]:
                 r = getHexStreamsFromElfExecutableSections(filename)
@@ -85,7 +86,9 @@ if __name__ == '__main__':
                     hexdata = s['hexStream']
 
                     for i, _ in enumerate(hexdata):
-                        print i
+                        if str(hexdata[i:i + 2]) in retHex:
+                            print str(hexdata[i:i + 2])
+
 
                     """ gadget = hexdata[0 : int(sys.argv[3]) * 2] #gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
                     gadget = convertXCS(gadget)
