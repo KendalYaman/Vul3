@@ -68,24 +68,23 @@ def getHexStreamsFromElfExecutableSections(filename):
 if __name__ == '__main__':
     if sys.argv[1] == '--test':
 
-        if sys.argv[3] == '--length':
+        
+        branInst = ["jmp", "je", "jz","jne","jnz","jg","jnle","jge","jnl","jl","jnge","jle","jng", "ja","jnbe","jnae","jxcz","jc","jnc"
+                    , "jo","jno","jp","jpe","jnp","jpo","js","jns", "call", "callq", "ret", "retq"]
+        md = Cs(CS_ARCH_X86, CS_MODE_64)
+        for filename in sys.argv[2:]:
+            r = getHexStreamsFromElfExecutableSections(filename)
+            print "Found ", len(r), " executable sections:"
+            i = 0
+            for s in r:
+                print "   ", i, ": ", s['name'], "0x", hex(s['addr'])#, s['hexStream']
+                i += 1
 
-            branInst = ["jmp", "je", "jz","jne","jnz","jg","jnle","jge","jnl","jl","jnge","jle","jng", "ja","jnbe","jnae","jxcz","jc","jnc"
-                        , "jo","jno","jp","jpe","jnp","jpo","js","jns", "call", "callq", "ret", "retq"]
-            md = Cs(CS_ARCH_X86, CS_MODE_64)
-            for filename in sys.argv[2:]:
-                r = getHexStreamsFromElfExecutableSections(filename)
-                print "Found ", len(r), " executable sections:"
-                i = 0
-                for s in r:
-                    print "   ", i, ": ", s['name'], "0x", hex(s['addr'])#, s['hexStream']
-                    i += 1
+                hexdata = s['hexStream']
+                gadget = hexdata[0 : 10]
+                gadget = convertXCS(gadget)
+                offset = 0
+                for (address, size, mnemonic, op_str) in md.disasm_lite(gadget, offset):
+                    print ("gadget: %s %s \n") %(mnemonic, op_str)
 
-                    hexdata = s['hexStream']
-                    gadget = hexdata[0 : 10]
-                    gadget = convertXCS(gadget)
-                    offset = 0
-                    for (address, size, mnemonic, op_str) in md.disasm_lite(gadget, offset):
-                        print ("gadget: %s %s \n") %(mnemonic, op_str)
 
-            
