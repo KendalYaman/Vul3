@@ -96,7 +96,7 @@ if __name__ == '__main__':
                             count+= 1
                             #print str(hexdata[i+2:])
                             flag = 1
-                            gadget = hexdata[i - (int(sys.argv[3])* 2 * 15 ) : i + 2]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
+                            gadget = hexdata[i - (int(sys.argv[3])* 2 * 15 ) : i + 4]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
                             gadget = convertXCS(gadget)
                             offset = 0
                             #print str(hexdata[i:i + 2])
