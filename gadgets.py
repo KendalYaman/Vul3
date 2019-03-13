@@ -68,7 +68,7 @@ def getHexStreamsFromElfExecutableSections(filename):
 if __name__ == '__main__':
     if sys.argv[1] == '--test':
 
-        if sys.argv[3] == '-length':
+        if sys.argv[3] == '--length':
 
             branInst = ["jmp", "je", "jz","jne","jnz","jg","jnle","jge","jnl","jl","jnge","jle","jng", "ja","jnbe","jnae","jxcz","jc","jnc"
                         , "jo","jno","jp","jpe","jnp","jpo","js","jns", "call", "callq", "ret", "retq"]
