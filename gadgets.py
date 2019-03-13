@@ -68,7 +68,7 @@ def getHexStreamsFromElfExecutableSections(filename):
 if __name__ == '__main__':
     if sys.argv[1] == '--test':
 
-        if sys.argv[2] == '-length':
+        if sys.argv[2] == '-length':#I check if there is -length argument
 
             branInst = ["jmp", "je", "jz","jne","jnz","jg","jnle","jge","jnl","jl","jnge","jle","jng", "ja","jnbe","jnae","jxcz","jc","jnc"
                         , "jo","jno","jp","jpe","jnp","jpo","js","jns", "call", "callq", "ret", "retq"]
@@ -83,11 +83,11 @@ if __name__ == '__main__':
                     i += 1
 
                     hexdata = s['hexStream']
-                    gadget = hexdata[0 : int(sys.argv[3]) * 2] #gadget = hexdata[0 : 30]
+                    gadget = hexdata[0 : int(sys.argv[3]) * 2] #gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
                     gadget = convertXCS(gadget)
                     offset = 0
                     for (address, size, mnemonic, op_str) in md.disasm_lite(gadget, offset):
-                        if mnemonic not in branInst:
+                        if mnemonic == "ret": #mnemonic not in branInst:
                             print ("gadget: %s %s \n") %(mnemonic, op_str)
 
 
