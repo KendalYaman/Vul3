@@ -83,7 +83,7 @@ if __name__ == '__main__':
                     i += 1
 
                     hexdata = s['hexStream']
-                    gadget = hexdata[0 : sys.argv[3] * 2] #gadget = hexdata[0 : 30]
+                    gadget = hexdata[0 : int(sys.argv[3]) * 2] #gadget = hexdata[0 : 30]
                     gadget = convertXCS(gadget)
                     offset = 0
                     for (address, size, mnemonic, op_str) in md.disasm_lite(gadget, offset):
