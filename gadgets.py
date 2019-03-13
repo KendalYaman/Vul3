@@ -98,8 +98,9 @@ if __name__ == '__main__':
                             offset = 0
                             #print str(hexdata[i:i + 2])
                             print ("\n")
+                            print ("gadget:\n")
                             for (address, size, mnemonic, op_str) in md.disasm_lite(gadget, offset):
-                                print ("gadget: %s %s ") % (mnemonic, op_str)
+                                print (" %s %s ") % (mnemonic, op_str)
 
 
                     """ gadget = hexdata[0 : int(sys.argv[3]) * 2] #gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
