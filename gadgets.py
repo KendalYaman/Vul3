@@ -74,12 +74,13 @@ if __name__ == '__main__':
                         , "jo","jno","jp","jpe","jnp","jpo","js","jns", "call", "callq", "ret", "retq"]
 
             retHex = ['c3', 'cb', 'c2', 'ca']
+            count = 0
             md = Cs(CS_ARCH_X86, CS_MODE_64)
             for filename in sys.argv[4:]: #for filename in sys.argv[2:]:
                 r = getHexStreamsFromElfExecutableSections(filename)
                 print "Found ", len(r), " executable sections:"
                 i = 0
-                count = 0
+
                 for s in r:
                     print "   ", i, ": ", s['name'], "0x", hex(s['addr'])#, s['hexStream']
                     i += 1
