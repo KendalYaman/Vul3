@@ -114,6 +114,7 @@ if __name__ == '__main__':
                             strList = []
                             for (address, size, mnemonic, op_str) in disassCode:
                                 strList.append([address, mnemonic, op_str])
+                            print len(strList)   
                             for fn in strList:
                                 if fn[1] in branInst:
                                     #print ("flag %s" % fn[1])
