@@ -85,9 +85,9 @@ if __name__ == '__main__':
                     hexdata = s['hexStream']
                     gadget = hexdata[0 : int(sys.argv[3]) * 2] #gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
                     gadget = convertXCS(gadget)
-                    offset = 0
+                    offset = 1
                     for (address, size, mnemonic, op_str) in md.disasm_lite(gadget, offset):
-                        if mnemonic == "ret": #mnemonic not in branInst:
+                        if mnemonic not in branInst:
                             print ("gadget: %s %s \n") %(mnemonic, op_str)
 
 
