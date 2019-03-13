@@ -92,15 +92,16 @@ if __name__ == '__main__':
 
                     for i, _ in enumerate(hexdata):
 
-                        if str(hexdata[i:i + 2]) in retHex:
+                        if str(hexdata[i: i + 2]) in retHex:
                             count+= 1
                             #print str(hexdata[i+2:])
                             flag = 1
-                            gadget = hexdata[i - 2 - (int(sys.argv[3])*15 * 2) : i + 2]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
+                            gadget = hexdata[i - (int(sys.argv[3])* 2) : i + 2]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
                             gadget = convertXCS(gadget)
                             offset = 0
                             #print str(hexdata[i:i + 2])
                             print ("\n")
+
                             disassCode = md.disasm_lite(gadget, offset)
                             strList = []
                             for (address, size, mnemonic, op_str) in disassCode:
@@ -110,16 +111,10 @@ if __name__ == '__main__':
                                     flag = 0
                             if flag == 1:
                                 print ("gadget:\n")
-
-                                for (address, size, mnemonic, op_str) in md.disasm_lite(gadget, offset):
-                                    print (" %s %s ") % (mnemonic, op_str)
+                                for strFN in fn:
+                                    print (" %s %s ") % (strFN[mnemonic], strFN[op_str])
 
                     print ("Count %s" % count)
-                    """ gadget = hexdata[0 : int(sys.argv[3]) * 2] #gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
-                    gadget = convertXCS(gadget)
-                    offset = 0
-                    for (address, size, mnemonic, op_str) in md.disasm_lite(gadget, offset):
-                        if mnemonic not in branInst:
-                            print ("gadget: %s %s \n") %(mnemonic, op_str)"""
+
 
 
