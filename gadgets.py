@@ -109,8 +109,8 @@ if __name__ == '__main__':
                                 strList.append([address, mnemonic, op_str])
                             for fn in strList:
                                 if fn[1] in branInst:
-                                    print ("flag %s" % fn[1])
-                                    #flag = 0
+                                    #print ("flag %s" % fn[1])
+                                    flag = 0
 
                             if flag == 1:
                                 print ("gadget:\n")
