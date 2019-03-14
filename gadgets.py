@@ -119,7 +119,7 @@ if __name__ == '__main__':
                                 #print "lol"
                                 flag = 0
                                 print "gadget: \n"
-                                for ( mnemonic, op_str) in instList[-3-1:]:
+                                for ( mnemonic, op_str) in instList[- int(argv[3])-1:]:
                                     print ("  %s %s \n") % (mnemonic, op_str)
 
 
