@@ -75,6 +75,7 @@ if __name__ == '__main__':
 
             retHex = ['c3','cb']
             count = 0
+            counterRet = 0
             md = Cs(CS_ARCH_X86, CS_MODE_64)
             for filename in sys.argv[4:]: #for filename in sys.argv[2:]:
                 r = getHexStreamsFromElfExecutableSections(filename)
@@ -118,8 +119,8 @@ if __name__ == '__main__':
 
 
                             if instList and str(instList[-1][0]) == "ret" and flag == 1:
-
-                                print "gadget: \n"
+                                counterRet+=1
+                                print "gadget %d : \n" % counterRet
                                 for ( mnemonic, op_str) in instList[- int(sys.argv[3])-1:]: #J 'affiche length -1 dernier valeur
                                     print ("  %s %s \n") % (mnemonic, op_str)
 
