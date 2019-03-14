@@ -104,7 +104,7 @@ if __name__ == '__main__':
                             offset = 0
 
                             instList = []
-                            disassCode = md.disasm_lite(gadget, offset)
+                            disassCode = md.disasm_lite(gadget, 0x1000)
 
 
                             for (address, size, mnemonic, op_str) in disassCode:
