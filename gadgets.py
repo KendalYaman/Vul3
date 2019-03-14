@@ -131,7 +131,7 @@ if __name__ == '__main__':
                                     instList.append([mnemonic, op_str])
                                     #print ("  %s \n")% (mnemonic)
 
-                                for
+                                
                                 if instList[-1][-1] == "ret":
                                     print lol
 
