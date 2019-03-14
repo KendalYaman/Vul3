@@ -133,7 +133,7 @@ if __name__ == '__main__':
 
                                 print ("gadget:\n")
                                 #sizeb = 0
-                                for ( mnemonic, op_str) in instList[26 : 30]:
+                                for ( mnemonic, op_str) in instList[20 : 28]:
 
                                     print ("  %s %s \n") % (mnemonic, op_str)
 
