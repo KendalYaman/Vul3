@@ -131,8 +131,8 @@ if __name__ == '__main__':
                                     instList.append([mnemonic, op_str])
                                     #print ("  %s \n")% (mnemonic)
 
-                                
-                                if instList[-1][-1] == "ret":
+
+                                if instList[-1-1] == "ret":
                                     print lol
 
                                 print ("gadget:\n")
