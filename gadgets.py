@@ -86,9 +86,6 @@ if __name__ == '__main__':
                     i += 1
 
                     hexdata = s['hexStream']
-                    #gadget = hexdata[0: int(sys.argv[3]) * 2]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
-                    #gadget = convertXCS(gadget)
-                    #offset = 0
 
                     for j, _ in enumerate(hexdata):
 
@@ -103,10 +100,7 @@ if __name__ == '__main__':
 
                             gadget = convertXCS(gadget)
 
-
                             offset = 0
-                            #print str(hexdata[i:i + 2])
-                            #print ("\n")
 
                             instList = []
                             disassCode = md.disasm_lite(gadget, offset)
@@ -116,19 +110,16 @@ if __name__ == '__main__':
                                 instList.append([mnemonic, op_str])
                                 #print ("  %s \n")% (mnemonic)
 
-                            for ( mnemonic, op_str) in instList[- int(sys.argv[3])-1 : - 1]:
-
+                            for ( mnemonic, op_str) in instList[-int(sys.argv[3])-1 : -1]:#Je check s'il n y as pas de mauvaise valeur excepté le dernier
                                 if mnemonic in branInst:
-                                    print ("  %s \n") % (mnemonic)
+                                    print ("mauvais   %s \n") % (mnemonic)
                                     flag = 0
 
 
-
                             if instList and str(instList[-1][0]) == ('ret') and flag == 1:
-                                #print "lol"
 
                                 print "gadget: \n"
-                                for ( mnemonic, op_str) in instList[- int(sys.argv[3])-1:]:
+                                for ( mnemonic, op_str) in instList[- int(sys.argv[3])-1:]:#J 'affiche length -1 dernier valeur
                                     print ("  %s %s \n") % (mnemonic, op_str)
 
 
