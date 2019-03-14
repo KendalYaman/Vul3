@@ -97,8 +97,8 @@ if __name__ == '__main__':
                             #print str(hexdata[i+2:])
                             flag = 1
 
-                            #gadget = hexdata[i  - (int(sys.argv[3])* 2 * 15 ) : i + 2]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
-                            gadget = hexdata
+                            gadget = hexdata[i  - (int(sys.argv[3])* 2 * 15 ) : i + 2]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
+
                             print (gadget)
                             gadget = convertXCS(gadget)
 
@@ -136,9 +136,9 @@ if __name__ == '__main__':
                                 print ("gadget:\n")
                                 #sizeb = 0
                                 for ( mnemonic, op_str) in instList:
-                                    if sizeb < 2 :
-                                        print ("    %s %s\n") % (mnemonic, op_str)
-                                    sizeb+=1
+
+                                    print ("    %s %s\n") % (mnemonic, op_str)
+
 
                     print ("Count %s" % count)
 
