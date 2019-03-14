@@ -132,7 +132,7 @@ if __name__ == '__main__':
                                     #print ("  %s \n")% (mnemonic)
 
 
-                                if str(instList[-1:-1][1]) == "ret":
+                                if str(instList[-1][1]) == ('ret'):
                                     print lol
 
                                 print ("gadget:\n")
