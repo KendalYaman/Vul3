@@ -99,7 +99,7 @@ if __name__ == '__main__':
 
                             gadget = hexdata[j - (int(sys.argv[3])* 2 * 15 ) : j + 2]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
 
-                            print (gadget)
+                            #print (gadget)
 
                             gadget = convertXCS(gadget)
 
@@ -137,9 +137,8 @@ if __name__ == '__main__':
                                 flag = 0
 
                             if flag == 1:
-                                print ("gadget:\n")
-                                #sizeb = 0
 
+                                print ("gadget2:\n")
                                 for ( mnemonic, op_str) in instList[-3-1:]:
 
                                     print ("  %s %s \n") % (mnemonic, op_str)
