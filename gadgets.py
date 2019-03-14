@@ -131,7 +131,7 @@ if __name__ == '__main__':
                                 sizeb = 0
                                 for (address, size, mnemonic, op_str) in md.disasm_lite(gadget, offset):
                                     if sizeb < 2 :
-                                        print ("    %s %s %d\n") % (mnemonic, op_str, address)
+                                        print ("    %s %s %d\n") % (mnemonic, op_str, size)
                                     sizeb+=1
 
                     print ("Count %s" % count)
