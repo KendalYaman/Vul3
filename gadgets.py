@@ -133,7 +133,7 @@ if __name__ == '__main__':
                                 print ("gadget:\n")
                                 sizeb = 0
                                 for (address, size, mnemonic, op_str) in md.disasm_lite(gadget, offset):
-                                    if sizeb <= 4:
+                                    if int(sizeb) <= 4:
                                         print ("    %s %s \n") % (mnemonic, op_str)
                                     sizeb+=1
 
