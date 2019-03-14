@@ -120,7 +120,7 @@ if __name__ == '__main__':
                                 flag = 0
 
                             if flag == 1:
-                                
+                                print "gadget: \n"
                                 for ( mnemonic, op_str) in instList[-3-1:]:
                                     print ("  %s %s \n") % (mnemonic, op_str)
 
