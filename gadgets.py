@@ -116,14 +116,12 @@ if __name__ == '__main__':
 
 
                             if instList and str(instList[-1][0]) != ('ret'):
-                                print "lol"
+                                #print "lol"
                                 flag = 0
 
                             if flag == 1:
-
                                 print ("gadget2:\n")
                                 for ( mnemonic, op_str) in instList[-3-1:]:
-
                                     print ("  %s %s \n") % (mnemonic, op_str)
 
 
