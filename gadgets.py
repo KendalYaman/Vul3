@@ -110,10 +110,11 @@ if __name__ == '__main__':
                                 instList.append([mnemonic, op_str])
                                 #print ("  %s \n")% (mnemonic)
 
-                            for ( mnemonic, op_str) in instList[-int(sys.argv[3])-1 : -1]:#Je check s'il n y as pas de mauvaise valeur excepté le dernier
+                            for ( mnemonic, op_str) in instList[- int(sys.argv[3])-1 : - 1]:#Je check s'il n y as pas de mauvaise valeur excepté le dernier
                                 if mnemonic in branInst:
-                                    print ("mauvais   %s \n") % (mnemonic)
+                                    print ("  %s \n") % (mnemonic)
                                     flag = 0
+
 
 
                             if instList and str(instList[-1][0]) == ('ret') and flag == 1:
