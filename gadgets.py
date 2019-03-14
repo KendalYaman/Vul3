@@ -75,7 +75,7 @@ if __name__ == '__main__':
 
             retHex = ['c3','cb']
             count = 0
-            md = Cs(CS_ARCH_X86, CS_MODE_64)
+            md = Cs(CS_ARCH_MIPS, CS_MODE_MIPS64 + CS_MODE_LITTLE_ENDIAN)
             for filename in sys.argv[4:]: #for filename in sys.argv[2:]:
                 r = getHexStreamsFromElfExecutableSections(filename)
                 print "Found ", len(r), " executable sections:"
