@@ -128,8 +128,8 @@ if __name__ == '__main__':
                                 #gadget = convertXCS(gadget)
 
                                 instList = []
-
-                                for (mnemonic, op_str) in md.disasm_lite(gadget, offset):
+                                disassCode = md.disasm_lite(gadget, offset)
+                                for (mnemonic, op_str) in disassCode:
                                     instList.append(mnemonic, op_str)
 
                                 print ("gadget:\n")
