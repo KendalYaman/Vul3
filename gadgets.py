@@ -94,7 +94,7 @@ if __name__ == '__main__':
                             #print str(hexdata[i+2:])
                             flag = 1
 
-                            gadget = hexdata[j - (int(sys.argv[3]) * 2 * 15 ) : j + 2]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
+                            gadget = hexdata[j - (int(sys.argv[3])* 2 * 15 ) : j + 2]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
 
                             #print (gadget)
 
@@ -103,7 +103,7 @@ if __name__ == '__main__':
                             offset = 0
 
                             instList = []
-                            disassCode = md.disasm_lite(gadget, offset)
+                            disassCode = md.disasm(gadget, offset)
 
 
                             for (address, size, mnemonic, op_str) in disassCode:
@@ -117,7 +117,7 @@ if __name__ == '__main__':
 
 
 
-                            if instList and flag == 1:
+                            if instList and str(instList[-1][0]) == "ret" and flag == 1:
 
                                 print "gadget: \n"
                                 for ( mnemonic, op_str) in instList[- int(sys.argv[3])-1:]: #J 'affiche length -1 dernier valeur
