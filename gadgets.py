@@ -127,11 +127,16 @@ if __name__ == '__main__':
                                 #print (gadget)
                                 #gadget = convertXCS(gadget)
 
+                                instList = []
+
+                                for (mnemonic, op_str) in md.disasm_lite(gadget, offset):
+                                    instList.append(mnemonic, op_str)
+
                                 print ("gadget:\n")
-                                sizeb = 0
-                                for (address, size, mnemonic, op_str) in md.disasm_lite(gadget, offset):
+                                #sizeb = 0
+                                for ( mnemonic, op_str) in instList:
                                     if sizeb < 2 :
-                                        print ("    %s %s %d\n") % (mnemonic, op_str, size)
+                                        print ("    %s %s\n") % (mnemonic, op_str)
                                     sizeb+=1
 
                     print ("Count %s" % count)
