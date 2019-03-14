@@ -95,9 +95,9 @@ if __name__ == '__main__':
                             #print str(hexdata[i+2:])
                             flag = 1
 
-                            gadget = hexdata[j - (int(sys.argv[3])* 2 * 4) : j + 2]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
+                            gadget = hexdata[j - (int(sys.argv[3])* 2 * 15) : j + 2]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
 
-                            #print (gadget)
+                            print (gadget)
 
                             gadget = convertXCS(gadget)
 
@@ -111,10 +111,10 @@ if __name__ == '__main__':
                                 instList.append([mnemonic, op_str])
                                 #print ("  %s \n")% (mnemonic)
 
-                            #for ( mnemonic, op_str) in instList[-int(sys.argv[3])-1: -1]:
-                                #if mnemonic in branInst:
+                            for ( mnemonic, op_str) in instList[-int(sys.argv[3])-1: -1]:
+                                if mnemonic in branInst:
                                     #print ("mauvais  %s \n") % (mnemonic)
-                                    #flag = 0
+                                    flag = 0
 
 
 
