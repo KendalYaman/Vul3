@@ -116,7 +116,7 @@ if __name__ == '__main__':
                                 instList.append([mnemonic, op_str])
                                 #print ("  %s \n")% (mnemonic)
 
-                            for ( mnemonic, op_str) in instList:
+                            for ( mnemonic, op_str) in instList[0 : -2]:
                                 if mnemonic in branInst:
                                     flag = 0
 
