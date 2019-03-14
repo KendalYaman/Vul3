@@ -70,8 +70,7 @@ if __name__ == '__main__':
 
         if sys.argv[2] == '-length':#I check if there is -length argument
 
-            branInst = ["jmp", "je", "jz","jne","jnz","jg","jnle","jge","jnl","jl","jnge","jle","jng", "ja","jnbe","jnae","jxcz","jc","jnc"
-                        , "jo","jno","jp","jpe","jnp","jpo","js","jns", "call", "callq", "ret", "retq"]
+            branInst = ["jmp", "je", "jz","jne","jnz","jg","jnle","jge","jnl","jl","jnge", "call", "callq", "ret", "retq"]
 
             retHex = ['c3','cb']
             count = 0
