@@ -121,9 +121,6 @@ if __name__ == '__main__':
                                     flag = 0"""
 
 
-
-
-
                             if flag == 1:
 
                                 #gadget = hexdata[i  - (int(sys.argv[3]) * 2) : i + 2 ]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
@@ -131,11 +128,11 @@ if __name__ == '__main__':
                                 #gadget = convertXCS(gadget)
 
                                 print ("gadget:\n")
-                                sizeb = 0
+                                #sizeb = 0
                                 for (address, size, mnemonic, op_str) in md.disasm_lite(gadget, offset):
-                                    if int(sizeb) <= 4:
-                                        print ("    %s %s \n") % (mnemonic, op_str)
-                                    sizeb+=1
+                                    #if int(sizeb) <= 4:
+                                    print ("    %s %s \n") % (mnemonic, op_str)
+                                    #sizeb+=1
 
                     print ("Count %s" % count)
 
