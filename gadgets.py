@@ -135,9 +135,9 @@ if __name__ == '__main__':
 
                                 print ("gadget:\n")
                                 #sizeb = 0
-                                for ( mnemonic) in instList:
+                                for ( mnemonic, op_str) in instList:
 
-                                    print ("  %s\n") % (mnemonic)
+                                    print ("  %s %s\n") % (mnemonic, op_str)
 
 
                     print ("Count %s" % count)
