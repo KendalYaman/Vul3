@@ -75,7 +75,7 @@ if __name__ == '__main__':
 
             retHex = ['c3','cb']
             count = 0
-            md = Cs(CS_ARCH_MIPS, CS_MODE_MIPS64 + CS_MODE_LITTLE_ENDIAN)
+            md = Cs(CS_ARCH_X86, CS_MODE_64)
             for filename in sys.argv[4:]: #for filename in sys.argv[2:]:
                 r = getHexStreamsFromElfExecutableSections(filename)
                 print "Found ", len(r), " executable sections:"
@@ -94,7 +94,7 @@ if __name__ == '__main__':
                             #print str(hexdata[i+2:])
                             flag = 1
 
-                            gadget = hexdata[j - (int(sys.argv[3])* 2 * 15 ) : j + 2]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
+                            gadget = hexdata[j - (int(sys.argv[3])* 2) : j + 2]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
 
                             #print (gadget)
 
@@ -103,7 +103,7 @@ if __name__ == '__main__':
                             offset = 0
 
                             instList = []
-                            disassCode = md.disasm(gadget, offset)
+                            disassCode = md.disasm_lite(gadget, offset)
 
 
                             for (address, size, mnemonic, op_str) in disassCode:
