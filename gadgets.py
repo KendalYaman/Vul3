@@ -117,8 +117,9 @@ if __name__ == '__main__':
                                 #print ("  %s \n")% (mnemonic)
 
                             for ( mnemonic, op_str) in instList[0 : -2]:
-                                print ("  %s \n") % (mnemonic)
+
                                 if mnemonic in branInst:
+                                    print ("  %s \n") % (mnemonic)
                                     flag = 0
 
 
