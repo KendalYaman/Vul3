@@ -123,18 +123,19 @@ if __name__ == '__main__':
                                     flag = 0"""
 
 
+                        
+
+                            instList = []
+                            disassCode = md.disasm_lite(gadget, offset)
+                            for (address, size, mnemonic, op_str) in disassCode:
+                                instList.append([mnemonic, op_str])
+                                #print ("  %s \n")% (mnemonic)
+
+
+                            if instList and str(instList[-1][0]) == ('ret'):
+                                print "lol"
+                                flag = 0
                             if flag == 1:
-
-                                instList = []
-                                disassCode = md.disasm_lite(gadget, offset)
-                                for (address, size, mnemonic, op_str) in disassCode:
-                                    instList.append([mnemonic, op_str])
-                                    #print ("  %s \n")% (mnemonic)
-
-
-                                if instList and str(instList[-1][0]) == ('ret'):
-                                    print "lol"
-
                                 print ("gadget:\n")
                                 #sizeb = 0
 
