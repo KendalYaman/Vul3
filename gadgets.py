@@ -106,7 +106,7 @@ if __name__ == '__main__':
                             #print str(hexdata[i:i + 2])
                             print ("\n")
 
-                            gadget2 = hexdata[i - (int(
+                            """gadget2 = hexdata[i - (int(
                                 sys.argv[3]) * 2): i]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
                             gadget2 = convertXCS(gadget2)
 
@@ -118,15 +118,15 @@ if __name__ == '__main__':
                             for fn in strList:
                                 if fn[1] in branInst:
                                     #print ("flag %s" % fn[1])
-                                    flag = 0
+                                    flag = 0"""
 
                             if flag == 1:
 
-                                gadget = hexdata[i  - (int(sys.argv[3]) * 2) : i + 2 ]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
+                                #gadget = hexdata[i  - (int(sys.argv[3]) * 2) : i + 2 ]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
                                 print (gadget)
                                 gadget = convertXCS(gadget)
 
-                                print ("gadget:\n")
+                                #print ("gadget:\n")
                                 for (address, size, mnemonic, op_str) in md.disasm_lite(gadget, offset):
                                     print ("%s %s \n") % (mnemonic, op_str)
 
