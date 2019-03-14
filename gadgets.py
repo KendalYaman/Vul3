@@ -133,7 +133,7 @@ if __name__ == '__main__':
 
 
                                 if instList and str(instList[-1][0]) == ('ret'):
-                                    print lol
+                                    print "lol"
 
                                 print ("gadget:\n")
                                 #sizeb = 0
