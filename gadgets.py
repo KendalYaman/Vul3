@@ -116,10 +116,15 @@ if __name__ == '__main__':
                                 instList.append([mnemonic, op_str])
                                 #print ("  %s \n")% (mnemonic)
 
+                            for ( mnemonic, op_str) in instList:
+                                if mnemonic in branInst:
+                                    flag = 0
 
-                            if str(instList[-1][0]) == ('ret'):
+
+
+                            if instList and str(instList[-1][0]) == ('ret') and flag == 1:
                                 #print "lol"
-                                flag = 0
+
                                 print "gadget: \n"
                                 for ( mnemonic, op_str) in instList[- int(sys.argv[3])-1:]:
                                     print ("  %s %s \n") % (mnemonic, op_str)
