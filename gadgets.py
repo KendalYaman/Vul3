@@ -115,7 +115,7 @@ if __name__ == '__main__':
                                 #print ("  %s \n")% (mnemonic)
 
 
-                            if instList and str(instList[-1][0]) != ('ret'):
+                            if instList and str(instList[-1][0]) == ('ret'):
                                 #print "lol"
                                 flag = 0
                                 print "gadget: \n"
