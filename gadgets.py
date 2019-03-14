@@ -133,9 +133,10 @@ if __name__ == '__main__':
 
                                 print ("gadget:\n")
                                 #sizeb = 0
-                                for ( mnemonic, op_str) in instList[-3:]:
+                                if instList[-1] in retHex:
+                                    for ( mnemonic, op_str) in instList[-3:]:
 
-                                    print ("  %s %s \n") % (mnemonic, op_str)
+                                        print ("  %s %s \n") % (mnemonic, op_str)
 
 
                     print ("Count %s" % count)
