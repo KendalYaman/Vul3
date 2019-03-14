@@ -131,7 +131,7 @@ if __name__ == '__main__':
                                 #gadget = convertXCS(gadget)
 
                                 print ("gadget:\n")
-                                sizeb =0
+                                sizeb = 0
                                 for (address, size, mnemonic, op_str) in md.disasm_lite(gadget, offset):
                                     if size <= 4:
                                         print ("    %s %s \n") % (mnemonic, op_str)
