@@ -131,13 +131,13 @@ if __name__ == '__main__':
                                 instList = []
                                 disassCode = md.disasm_lite(gadget, offset)
                                 for (address, size, mnemonic, op_str) in disassCode:
-                                    instList.append(mnemonic)
+                                    instList.append(mnemonic, op_str)
 
                                 print ("gadget:\n")
                                 #sizeb = 0
                                 for ( mnemonic) in instList:
 
-                                    print ("    %s\n") % (mnemonic)
+                                    print ("  %s\n") % (mnemonic)
 
 
                     print ("Count %s" % count)
