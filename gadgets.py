@@ -104,7 +104,7 @@ if __name__ == '__main__':
 
                             offset = 0
                             #print str(hexdata[i:i + 2])
-                            print ("\n")
+                            #print ("\n")
 
                             """gadget2 = hexdata[i - (int(
                                 sys.argv[3]) * 2): i]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
