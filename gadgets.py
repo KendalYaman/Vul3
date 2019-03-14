@@ -137,7 +137,7 @@ if __name__ == '__main__':
                                 #sizeb = 0
                                 for ( mnemonic) in instList:
 
-                                    print ("    %s %s\n") % (mnemonic)
+                                    print ("    %s\n") % (mnemonic)
 
 
                     print ("Count %s" % count)
