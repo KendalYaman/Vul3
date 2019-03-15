@@ -95,12 +95,11 @@ if __name__ == '__main__':
                             #print str(hexdata[i+2:])
                             flag = 1
 
+                            fact = 2
 
-                            if int(sys.argv[3]) == 1 or  int(sys.argv[3]) == 2:
-                                fact = 2
-                            else:
+                            #if int(sys.argv[3]) == 3: #J'utilise cette partie seulement quand je veux l'utiliser avec /bin/sh sinon j'ai "Input too short
+                              #fact = 1
 
-                                fact = 1
 
                             gadget = hexdata[j  - (int(sys.argv[3]) * 2 * fact * 15) : j + 2]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
 
@@ -116,11 +115,10 @@ if __name__ == '__main__':
 
                             for (address, size, mnemonic, op_str) in disassCode:
                                 instList.append([mnemonic, op_str])
-                                #print ("  %s \n")% (mnemonic)
+
 
                             for ( mnemonic, op_str) in instList[-int(sys.argv[3])-1: -1]:
                                 if mnemonic in branInst:
-                                    #print ("mauvais  %s \n") % (mnemonic)
                                     flag = 0
 
 
