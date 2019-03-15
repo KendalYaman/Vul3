@@ -120,7 +120,7 @@ if __name__ == '__main__':
                             for (address, size, mnemonic, op_str) in disassCode: #Ici je mets tout dans ma liste
                                 instList.append([mnemonic, op_str])
 
-                            
+                            #je verifie que ma liste ne contient pas de "wrong word"
                             for ( mnemonic, op_str) in instList[-int(sys.argv[3])-1: -1]:
                                 if mnemonic in branInst: #Sinon je change le flag
                                     flag = 0
