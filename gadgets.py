@@ -111,14 +111,14 @@ if __name__ == '__main__':
                                 instList.append([mnemonic, op_str])
                                 #print ("  %s \n")% (mnemonic)
 
-                            #for ( mnemonic, op_str) in instList[-int(sys.argv[3])-1: -1]:
-                                #if mnemonic in branInst:
+                            for ( mnemonic, op_str) in instList[-int(sys.argv[3])-1: -1]:
+                                if mnemonic in branInst:
                                     #print ("mauvais  %s \n") % (mnemonic)
-                                    #flag = 0
+                                    flag = 0
 
 
 
-                            if instList  and flag == 1: #and  str(instList[-1][0]) == ('ret')
+                            if instList and  str(instList[-1][0]) == ('ret') and flag == 1:
                                 counterRet+=1
                                 print "gadget %d : \n" % counterRet
                                 for ( mnemonic, op_str) in instList[- int(sys.argv[3])-1:]: #J 'affiche length -1 dernier valeur
