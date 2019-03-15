@@ -99,8 +99,10 @@ if __name__ == '__main__':
 
                             fact = 2 #J'utilise cette partie seulement quand je veux l'utiliser avec /bin/ls ou libc
 
+
                             #if int(sys.argv[3]) == 3: #J'utilise cette partie seulement quand je veux l'utiliser avec /bin/ls ou libc sinon j'ai "Input too short
-                              #fact = 1
+                            if sys.argv[4] == "/bin/ls" and int(sys.argv[3]) == 3:
+                                fact = 1
 
 
                             gadget = hexdata[j  - (int(sys.argv[3]) * 2 * fact * 15) : j + 2]  # Je ne sais pas pourquoi, ca marche quand je multiplie encore par 2
