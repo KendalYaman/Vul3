@@ -102,7 +102,7 @@ if __name__ == '__main__':
 
                                 fact = 1
 
-                            gadget = hexdata[j  - (int(sys.argv[3]) * 2 * 15) : j + 2]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
+                            gadget = hexdata[j  - (int(sys.argv[3]) * 2 * fact * 15) : j + 2]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
 
                             print (gadget)
 
