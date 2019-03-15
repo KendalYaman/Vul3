@@ -97,13 +97,13 @@ if __name__ == '__main__':
                             #print str(hexdata[i+2:])
                             flag = 1 #I initialize flag. Flag is used for wrong instructions
 
-                            #fact = 2
+                            fact = 2 #J'utilise cette partie seulement quand je veux l'utiliser avec /bin/ls ou libc
 
-                            #if int(sys.argv[3]) == 3: #J'utilise cette partie seulement quand je veux l'utiliser avec /bin/sh sinon j'ai "Input too short
+                            #if int(sys.argv[3]) == 3: #J'utilise cette partie seulement quand je veux l'utiliser avec /bin/ls ou libc sinon j'ai "Input too short
                               #fact = 1
 
 
-                            gadget = hexdata[j  - (int(sys.argv[3]) * 2 * 2 * 15) : j + 2]  # gadget = hexdata[0 : 30]. Ici on multiplie par 2 le length
+                            gadget = hexdata[j  - (int(sys.argv[3]) * 2 * fact * 15) : j + 2]  # Je ne sais pas pourquoi, ca marche quand je multiplie encore par 2
 
                             print (gadget)
 

