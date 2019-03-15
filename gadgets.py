@@ -111,7 +111,7 @@ if __name__ == '__main__':
                                 instList.append([mnemonic, op_str])
                                 #print ("  %s \n")% (mnemonic)
 
-                            for ( mnemonic, op_str) in instList[-int(sys.argv[3])-1: -1]:
+                            for ( mnemonic, op_str) in instList[-int(sys.argv[3]): -1]:
                                 if mnemonic in branInst:
                                     #print ("mauvais  %s \n") % (mnemonic)
                                     flag = 0
