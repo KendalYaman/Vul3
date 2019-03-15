@@ -100,14 +100,14 @@ if __name__ == '__main__':
                             fact = 2 #J'utilise cette partie seulement quand je veux l'utiliser avec /bin/ls ou libc
 
 
-                            #if int(sys.argv[3]) == 3: #J'utilise cette partie seulement quand je veux l'utiliser avec /bin/ls ou libc sinon j'ai "Input too short
+                             #J'utilise cette partie seulement quand je veux l'utiliser avec /bin/ls ou libc sinon j'ai "Input too short avec une length 3
                             if (sys.argv[4] == "/bin/ls" or sys.argv[4] == "/lib/x86_64-linux-gnu/libc-2.24.so") and int(sys.argv[3]) == 3:
                                 fact = 1
 
 
                             gadget = hexdata[j  - (int(sys.argv[3]) * 2 * fact * 15) : j + 2]  # Je ne sais pas pourquoi, ca marche quand je multiplie encore par 2
 
-                            print (gadget)
+                            #print (gadget)
 
                             gadget = convertXCS(gadget)
 
@@ -117,12 +117,12 @@ if __name__ == '__main__':
                             disassCode = md.disasm_lite(gadget, offset)
 
 
-                            for (address, size, mnemonic, op_str) in disassCode:
+                            for (address, size, mnemonic, op_str) in disassCode: #Ici je mets tout dans ma liste
                                 instList.append([mnemonic, op_str])
 
 
-                            for ( mnemonic, op_str) in instList[-int(sys.argv[3])-1: -1]:
-                                if mnemonic in branInst:
+                            for ( mnemonic, op_str) in instList[-int(sys.argv[3])-1: -1]: #je vérifie que ma liste ne contient pas de "wrong word"
+                                if mnemonic in branInst: #Sinon je change le flag
                                     flag = 0
 
 
@@ -130,7 +130,7 @@ if __name__ == '__main__':
                             if instList and  str(instList[-1][0]) == ('ret') and flag == 1:
                                 counterRet+=1
                                 print "gadget %d : \n" % counterRet
-                                for ( mnemonic, op_str) in instList[- int(sys.argv[3])-1:]: #J 'affiche length -1 dernier valeur
+                                for ( mnemonic, op_str) in instList[- int(sys.argv[3])-1:]: #J 'affiche length +1 dernier valeur
                                     print ("  %s %s \n") % (mnemonic, op_str)
 
 
