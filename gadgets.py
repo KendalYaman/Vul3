@@ -70,10 +70,12 @@ if __name__ == '__main__':
 
         if sys.argv[2] == '-length':#I check if there is -length argument
 
+            #This the list of branching instructions with possible ret(q) instructions
+
             branInst = ["jmp", "je", "jz","jne","jnz","jg","jnle","jge","jnl","jl","jnge","jle","jng", "ja","jnbe","jnae","jxcz","jc","jnc"
                         , "jo","jno","jp","jpe","jnp","jpo","js","jns", "call", "callq", "ret", "retq"]
 
-            retHex = ['c3','cb']
+            retHex = ['c3','cb'] #The reurn list
             count = 0
             counterRet = 0
             md = Cs(CS_ARCH_X86, CS_MODE_64)
@@ -88,14 +90,14 @@ if __name__ == '__main__':
 
                     hexdata = s['hexStream']
 
-                    for j, _ in enumerate(hexdata):
+                    for j, _ in enumerate(hexdata): #We "browse" all hexdata
 
-                        if str(hexdata[j : j + 2]) in retHex:
+                        if str(hexdata[j : j + 2]) in retHex: #If we meet a ret(q) we enter in the condition
                             count+= 1
                             #print str(hexdata[i+2:])
-                            flag = 1
+                            flag = 1 #I initialize flag. Flag is used for wrong instructions
 
-                            fact = 2
+                            #fact = 2
 
                             #if int(sys.argv[3]) == 3: #J'utilise cette partie seulement quand je veux l'utiliser avec /bin/sh sinon j'ai "Input too short
                               #fact = 1
