@@ -101,8 +101,7 @@ if __name__ == '__main__':
 
 
                             #if int(sys.argv[3]) == 3: #J'utilise cette partie seulement quand je veux l'utiliser avec /bin/ls ou libc sinon j'ai "Input too short
-                            if (sys.argv[4] == "/lib/x86_64-linux-gnu/libc-2.24.so") and int(sys.argv[3]) == 3:
-                                print "Hello"
+                            if (sys.argv[4] == "/bin/ls" or sys.argv[4] == "/lib/x86_64-linux-gnu/libc-2.24.so") and int(sys.argv[3]) == 3:
                                 fact = 1
 
 
